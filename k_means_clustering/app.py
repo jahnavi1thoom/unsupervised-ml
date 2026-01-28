@@ -27,7 +27,11 @@ st.caption("👉 Discover hidden customer groups without predefined labels.")
 # --------------------------------------------------
 # Load Dataset
 # --------------------------------------------------
-df = pd.read_csv("Wholesale customers data.csv")
+import os
+
+DATA_PATH = os.path.join(os.path.dirname(__file__), "Wholesale customers data.csv")
+df = pd.read_csv(DATA_PATH)
+
 
 # Keep only numeric columns
 numeric_cols = df.select_dtypes(include=["int64", "float64"]).columns.tolist()
